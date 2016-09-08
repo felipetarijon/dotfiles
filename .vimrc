@@ -7,7 +7,7 @@
 
 " Local Runtime
 if has("win32") || has("win64")
-"    let $VIMHOME = $HOME."/vimfiles"
+    let $VIMHOME = $HOME."/vimfiles"
 else
     let $VIMHOME = $HOME."/.vim"
 endif
@@ -36,6 +36,8 @@ set ruler
 set showmatch
 set vb t_vb=
 set visualbell t_vb=
+set colorcolumn=150
+highlight ColorColumn ctermbg=white guibg=white
 
 set backupdir=~/vimfiles/backup//
 set directory=~/vimfiles/swap//
