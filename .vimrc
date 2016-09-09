@@ -62,6 +62,9 @@ nmap <C-V> "+gP
 imap <C-V> <ESC><C-V>i
 vmap <C-C> "+y
 
+nnoremap <C><S-Up> ddkP
+nnoremap <C><S-Down> ddp
+
 set autochdir
 set autoread
 set backspace=indent,eol,start
@@ -113,7 +116,7 @@ autocmd BufWinEnter *.wofl silent loadview  " Fix an edge-case with folding sing
 filetype plugin on
 let NERDTreeShowHidden=1                            " Shows hidden files (Files that starts with '.' (dot)
 let NERDTreeIgnore = ['\.pyc$', '\.git$', '\.swp$'] " Ignore some hidden files
-nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader><S-n> :NERDTreeToggle<CR>
 
 " buffer navigation
 nmap <M-Right> :bn<CR>
@@ -128,7 +131,7 @@ nmap <leader>j :%!python -m json.tool<CR>
 nmap <leader>t :TagbarToggle<CR>
 
 " nerdtree toggle
-nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader><C-n> :NERDTreeToggle<CR>
 
 " Startup Commands
 if has("autocmd")
