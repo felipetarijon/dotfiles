@@ -34,8 +34,8 @@ set cursorline		                        " Highlight current line
 set numberwidth=5
 set ruler
 set showmatch
-set vb t_vb=
-set visualbell t_vb=
+autocmd GUIEnter * set vb t_vb=
+autocmd VimEnter * set vb t_vb=
 set colorcolumn=150
 highlight ColorColumn ctermbg=white guibg=white
 
@@ -62,8 +62,9 @@ nmap <C-V> "+gP
 imap <C-V> <ESC><C-V>i
 vmap <C-C> "+y
 
-nnoremap <C><S-Up> ddkP
-nnoremap <C><S-Down> ddp
+nnoremap <C-S-Up> ddkP
+nnoremap <C-S-Down> ddp
+nnoremap <C-S-d> YP
 
 set autochdir
 set autoread
@@ -115,7 +116,7 @@ autocmd BufWinLeave *.wofl mkview           " Fiz an edge-case with folding sing
 autocmd BufWinEnter *.wofl silent loadview  " Fix an edge-case with folding single-itens
 filetype plugin on
 let NERDTreeShowHidden=1                            " Shows hidden files (Files that starts with '.' (dot)
-let NERDTreeIgnore = ['\.pyc$', '\.git$', '\.swp$'] " Ignore some hidden files
+let NERDTreeIgnore = ['\.pyc$', '\.git$', '\.swp$', '__pycache__$'] " Ignore some hidden files
 nmap <leader><S-n> :NERDTreeToggle<CR>
 
 " buffer navigation
@@ -146,6 +147,7 @@ if has("autocmd")
 endif
 
 nmap <F8> :TagbarToggle<CR>                 " F8 to Toggle TagBar
+nmap <F9> :e ~/_vimrc<CR>                   " F9 to open vimrc file
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -158,6 +160,12 @@ let g:syntastic_check_on_wq = 0
 " vim-airline
 let g:airline_theme='base16_isotope'
 let g:airline#extensions#tabline#enabled = 1
+" Tab navigation like Firefox.
+nnoremap <C-S-tab> :bprevious<CR>
+nnoremap <C-tab>   :bnext<CR>
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#buffer_min_count = 2
 
 " CtrlP - Fuzzy Finder
 let g:ctrlp_map = '<c-p>'
