@@ -4,6 +4,13 @@
 " Version: 20160831.0
 "
 " Help? Press K while the cursor is in the keyword
+"
+"   _____      .__  .__                  __               .__     __               
+" _/ ____\____ |  | |__|_____   ____   _/  |______ _______|__|   |__| ____   ____  
+" \   __\/ __ \|  | |  \____ \_/ __ \  \   __\__  \\_  __ \  |   |  |/  _ \ /    \ 
+"  |  | \  ___/|  |_|  |  |_> >  ___/   |  |  / __ \|  | \/  |   |  (  <_> )   |  \
+"  |__|  \___  >____/__|   __/ \___  >  |__| (____  /__|  |__/\__|  |\____/|___|  /
+"            \/        |__|        \/             \/         \______|           \/
 
 " Local Runtime
 if has("win32") || has("win64")
@@ -15,7 +22,7 @@ endif
 " ========
 "  COLORS
 " ========
-colorscheme lyla
+colorscheme unicon
 syntax enable
 
 " ===============
@@ -38,6 +45,7 @@ autocmd GUIEnter * set vb t_vb=
 autocmd VimEnter * set vb t_vb=
 set colorcolumn=150
 highlight ColorColumn ctermbg=white guibg=white
+hi ColorColumn guibg=white ctermbg=white
 
 set backupdir=~/vimfiles/backup//
 set directory=~/vimfiles/swap//
@@ -109,7 +117,20 @@ nnoremap <space> za	                        " Space open/closes folds
 " =========
 "  PLUGINS
 " =========
-execute pathogen#infect()
+set rtp+=~/vimfiles/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'majutsushi/tagbar'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vitalk/vim-simple-todo'
+call vundle#end()
+filetype plugin indent on
+
 autocmd VimEnter * NERDTree C:\dev          " Opens the NERDTree
 autocmd VimEnter * wincmd p                 " Move the cursor into the main window
 autocmd BufWinLeave *.wofl mkview           " Fiz an edge-case with folding single-itens
@@ -118,6 +139,11 @@ filetype plugin on
 let NERDTreeShowHidden=1                            " Shows hidden files (Files that starts with '.' (dot)
 let NERDTreeIgnore = ['\.pyc$', '\.git$', '\.swp$', '__pycache__$'] " Ignore some hidden files
 nmap <leader><S-n> :NERDTreeToggle<CR>
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_expandabbr_key='<Tab>'
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " buffer navigation
 nmap <M-Right> :bn<CR>
