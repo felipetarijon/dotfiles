@@ -15,6 +15,15 @@ git clone https://github.com/felipetarijon/dotfiles/.vimrc.git ~/.vimrc
 git clone https://github.com/felipetarijon/dotfiles/.vimrc.git ~/_vimrc
 ```
 
+###Configuring vimrc file
+
+Change line 15:
+```
+let $WORKING_DIR = "C:/dev"
+```
+Working dir is where NERDTree will be opened
+
+
 ###Hotkeys
 
 | **Hotkey**         | **Action**               |
@@ -29,6 +38,9 @@ git clone https://github.com/felipetarijon/dotfiles/.vimrc.git ~/_vimrc
 | Leader + Space     | Disable highlight search |
 | Ctrl + Shift + ↑   | Move a line upwards      |
 | Ctrl + Shift + ↓   | Move a line downwards    |
+| Ctrl + Shift + d   | Duplicate a line         |
+| Ctrl + c           | Copy                     |
+| Ctrl + v           | Paste                    |
 
 ----------
 
