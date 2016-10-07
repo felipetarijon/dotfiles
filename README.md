@@ -17,9 +17,11 @@ git clone https://github.com/felipetarijon/dotfiles/.vimrc.git ~/_vimrc
 
 ###Hotkeys
 
-| **Hotkey** | **Action**       |
-|------------|------------------|
-| F9         | Open .vimrc file |
+| **Hotkey** | **Action**        |
+|------------|-------------------|
+| F8         | Toggle tagbar     |
+| F9         | Opens .vimrc file |
+| Ctrl + p   | Fuzzy finder      |
 
 ----------
 
