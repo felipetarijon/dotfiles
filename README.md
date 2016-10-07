@@ -17,11 +17,18 @@ git clone https://github.com/felipetarijon/dotfiles/.vimrc.git ~/_vimrc
 
 ###Hotkeys
 
-| **Hotkey** | **Action**        |
-|------------|-------------------|
-| F8         | Toggle tagbar     |
-| F9         | Opens .vimrc file |
-| Ctrl + p   | Fuzzy finder      |
+| **Hotkey**         | **Action**               |
+|--------------------|--------------------------|
+| F8                 | Tagbar toggle            |
+| F9                 | Open .vimrc file         |
+| Ctrl + p           | Fuzzy finder             |
+| Ctrl + Shift + Tab | Previous tab             |
+| Ctrl + Tab         | Next tab                 |
+| Leader + Shift + n | NERDTree toggle          |
+| Leader + j         | Prettify JSON            |
+| Leader + Space     | Disable highlight search |
+| Ctrl + Shift + ↑   | Move a line upwards      |
+| Ctrl + Shift + ↓   | Move a line downwards    |
 
 ----------
 
