@@ -5,17 +5,17 @@
 
 ###Vundle - plugin manager
 
-####Linux
+####How to install on Linux
 ```
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-####Windows
+####How to install on Windows
 ```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/*vimfiles*/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/vimfiles/bundle/Vundle.vim
 ```
 
-Plugins list:
+Plugins list:  
     * ctrlp  
     * emmet-vim   
     * jedi-vim   
