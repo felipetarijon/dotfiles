@@ -34,6 +34,8 @@ OBS: The leader key is **```\|```**
 | Ctrl + p           | Fuzzy finder             |
 | Ctrl + Shift + Tab | Previous tab             |
 | Ctrl + Tab         | Next tab                 |
+| Alt  + ↔           | Previous / Next tab      |
+| Alt  + q           | Close active tab         |
 | Leader + Shift + n | NERDTree toggle          |
 | Leader + j         | Prettify JSON            |
 | Leader + Space     | Disable highlight search |
