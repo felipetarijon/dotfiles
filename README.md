@@ -25,6 +25,7 @@ Working dir is where NERDTree will be opened
 
 
 ###Hotkeys
+OBS: The leader key is ```**\|**```
 
 | **Hotkey**         | **Action**               |
 |--------------------|--------------------------|
