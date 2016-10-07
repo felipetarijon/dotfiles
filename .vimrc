@@ -1,7 +1,7 @@
 " ~/.vimrc
 " Maintainer: Felipe Tarijon de Almeida <felipest9@gmail.com>
 " Description: vim initialization file
-" Version: 20160831.0
+" Version: 20161005.0
 "
 " Help? Press K while the cursor is in the keyword
 "
@@ -12,11 +12,15 @@
 "  |__|  \___  >____/__|   __/ \___  >  |__| (____  /__|  |__/\__|  |\____/|___|  /
 "            \/        |__|        \/             \/         \______|           \/
 
+let $WORKING_DIR = "C:/dev"
+
 " Local Runtime
 if has("win32") || has("win64")
     let $VIMHOME = $HOME."/vimfiles"
+    let $VIMFILE = "_vimrc"
 else
     let $VIMHOME = $HOME."/.vim"
+    let $VIMFILE = ".vimrc"
 endif
 
 " ========
@@ -47,9 +51,9 @@ set colorcolumn=150
 highlight ColorColumn ctermbg=white guibg=white
 hi ColorColumn guibg=white ctermbg=white
 
-set backupdir=~/vimfiles/backup//
-set directory=~/vimfiles/swap//
-set undodir=~/vimfiles/undo//
+set backupdir=$VIMHOME/backup//
+set directory=$VIMHOME/swap//
+set undodir=$VIMHOME/undo//
 
 " Size of the window at startup
 if has("gui_running")
@@ -107,17 +111,9 @@ set hlsearch		                        " Highlight matches
 nnoremap <leader><space> :nohlsearch<CR>
 
 " =========
-"  FOLDING
-" =========
-set foldenable 		                        " Enable folding
-set foldlevelstart=10                       " Open most folds by default
-set foldnestmax=10                          " 10 nested fold maximum
-nnoremap <space> za	                        " Space open/closes folds
-
-" =========
 "  PLUGINS
 " =========
-set rtp+=~/vimfiles/bundle/Vundle.vim
+set rtp+=$VIMHOME/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
@@ -131,7 +127,7 @@ Plugin 'vitalk/vim-simple-todo'
 call vundle#end()
 filetype plugin indent on
 
-autocmd VimEnter * NERDTree C:\dev          " Opens the NERDTree
+autocmd VimEnter * NERDTree $WORKING_DIR    " Opens the NERDTree
 autocmd VimEnter * wincmd p                 " Move the cursor into the main window
 autocmd BufWinLeave *.wofl mkview           " Fiz an edge-case with folding single-itens
 autocmd BufWinEnter *.wofl silent loadview  " Fix an edge-case with folding single-itens
@@ -167,13 +163,13 @@ if has("autocmd")
     " toggle nerdtree while starting vim
     if has("gui_running")
         au VimEnter * NERDTreeToggle
-        au VimEnter * NERDTree C:\dev
+        au VimEnter * NERDTree $WORKING_DIR
         au VimEnter * wincmd l
     endif
 endif
 
 nmap <F8> :TagbarToggle<CR>                 " F8 to Toggle TagBar
-nmap <F9> :e ~/_vimrc<CR>                   " F9 to open vimrc file
+nmap <F9> :e ~/$VIMFILE<CR>                   " F9 to open vimrc file
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
