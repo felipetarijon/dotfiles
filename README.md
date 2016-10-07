@@ -18,6 +18,7 @@ git clone https://github.com/felipetarijon/dotfiles/.vimrc.git ~/_vimrc
 ###Hotkeys
 
 | **Hotkey** | **Action**       |
+|------------|------------------|
 | F9         | Open .vimrc file |
 
 ----------
