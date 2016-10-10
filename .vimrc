@@ -12,7 +12,7 @@
 "  |__|  \___  >____/__|   __/ \___  >  |__| (____  /__|  |__/\__|  |\____/|___|  /
 "            \/        |__|        \/             \/         \______|           \/
 
-let $WORKING_DIR = "C:/dev"
+let $WORKING_DIR = "/var/www"
 
 " Local Runtime
 if has("win32") || has("win64")
@@ -22,12 +22,6 @@ else
     let $VIMHOME = $HOME."/.vim"
     let $VIMFILE = ".vimrc"
 endif
-
-" ========
-"  COLORS
-" ========
-colorscheme unicon
-syntax enable
 
 " ===============
 "  SPACES & TABS
@@ -39,10 +33,10 @@ set expandtab 		                        " Tabs are spaces
 " ===========
 "  UI CONFIG
 " ===========
+syntax enable
 set number		                            " Show line numbers
 set showcmd		                            " Show command in bottom bar
 set cursorline		                        " Highlight current line
-set numberwidth=5
 set ruler
 set showmatch
 autocmd GUIEnter * set vb t_vb=
@@ -100,7 +94,6 @@ endif
 
 set encoding=utf-8
 set fileencoding=utf-8
-set guifont=Lucida_Console:h10
 
 " ===========
 "  SEARCHING
@@ -124,8 +117,10 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vitalk/vim-simple-todo'
+Plugin 'joshdick/onedark.vim'
 call vundle#end()
 filetype plugin indent on
+colorscheme onedark
 
 autocmd VimEnter * NERDTree $WORKING_DIR    " Opens the NERDTree
 autocmd VimEnter * wincmd p                 " Move the cursor into the main window
