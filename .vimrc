@@ -11,8 +11,43 @@
 "  |  | \  ___/|  |_|  |  |_> >  ___/   |  |  / __ \|  | \/  |   |  (  <_> )   |  \
 "  |__|  \___  >____/__|   __/ \___  >  |__| (____  /__|  |__/\__|  |\____/|___|  /
 "            \/        |__|        \/             \/         \______|           \/
+" ____
+"                    _.' :  `._
+"                .-.'`.  ;   .'`.-.
+"       __      / : ___\ ;  /___ ; \      __  
+"     ,'_ ''--.:__;".-.";: :".-.":__;.--"" _`,
+"     :' `.t""--.. '<@.`;_  ',@>` ..--""j.' `;
+"          `:-.._J '-.-'L__ `-- ' L_..-;'     
+"            '-.__ ;  .-"  '-.  : __.-"       
+"                L ' /.------.\ ' J           
+"                 '-.   '--"   .-"            
+"                __.l"-:_JL_;-";.__
+"             .-j/'.;  ;""""  / .'\"-.        
+"           .' /:`. '-.:     .-" .';  `.      
+"        .-"  / ;  '-. '-..-" .-"  :    "-.   
+"     .+"-.  : :      '-.__.-"      ;-._   \  
+"     ; \  `.; ;                    : : "+. ; 
+"     :  ;   ; ;                    : ;  : \: 
+"     ;  :   ; :                    ;:   ;  :
+"    : \  ;  :  ;                  : ;  /  :: 
+"    ;  ; :   ; :                  ;   :   ;: 
+"    :  :  ;  :  ;                : :  ;  : ; 
+"    ;\    :   ; :                ; ;     ; ; 
+"    : `."-;   :  ;              :  ;    /  ; 
+"     ;    -:   ; :              ;  : .-"   : 
+"     :\     \  :  ;            : \.-"      : 
+"      ;`.    \  ; :            ;.'_..--  / ;
+"      :  '-.  '-:  ;          :/."      .'  :
+"       \         \ :          ;/  __        :
+"        \       .-`.\        /t-""  ":-+.   :
+"         `.  .-"    `l    __/ /`. :  ; ; \  ;
+"           \   .-" .-"-.-"  .' .'j \  /   ;/
+"            \ / .-"   /.     .'.' ;_:'    ;
+"             :-""-.`./-.'     /    `.___.'
+"                   \ `t  ._  /
+"                    "-.t-._:'
 
-let $WORKING_DIR = "/var/www"
+let $WORKING_DIR = "~/dev"
 
 " Local Runtime
 if has("win32") || has("win64")
@@ -118,6 +153,9 @@ Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vitalk/vim-simple-todo'
 Plugin 'joshdick/onedark.vim'
+Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'joonty/vdebug'
 call vundle#end()
 filetype plugin indent on
 colorscheme onedark
@@ -128,8 +166,10 @@ autocmd BufWinLeave *.wofl mkview           " Fiz an edge-case with folding sing
 autocmd BufWinEnter *.wofl silent loadview  " Fix an edge-case with folding single-itens
 filetype plugin on
 let NERDTreeShowHidden=1                            " Shows hidden files (Files that starts with '.' (dot)
-let NERDTreeIgnore = ['\.pyc$', '\.git$', '\.swp$', '__pycache__$'] " Ignore some hidden files
+let NERDTreeIgnore = ['\.pyc$', '\.git$', '\.swp$', '__pycache__$', '.idea'] " Ignore some hidden files
 nmap <leader><S-n> :NERDTreeToggle<CR>
+
+let g:virtualenv_directory = $WORKING_DIR.'/virtualenvs'
 
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
@@ -139,7 +179,7 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 " buffer navigation
 nmap <M-Right> :bn<CR>
 nmap <M-Left> :bp<CR>
-nmap <M-q> :bp<CR>:bd #<CR>
+nmap <M-e> :bp<CR>:bd #<CR>
 nmap <M-Up> :buffers<CR>
 
 " pretify json
@@ -191,3 +231,4 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " Gitgutter
 nmap <leader>g :GitGutter
+
