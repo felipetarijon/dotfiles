@@ -1,21 +1,24 @@
 # dotfiles
 ----------
 
-##.vimrc
+## .vimrc
 
-###Installing
+### Installing
 
-####Linux
+#### Linux
 ```
+mkdir ~/.vim/undo/
+mkdir ~/.vim/backup/
+mkdir ~/.vim/swap/
 git clone https://github.com/felipetarijon/dotfiles/.vimrc.git ~/.vimrc
 ```
 
-####Windows
+#### Windows
 ```
 git clone https://github.com/felipetarijon/dotfiles/.vimrc.git ~/_vimrc
 ```
 
-###Configuring vimrc file
+### Configuring vimrc file
 
 Change line 15:
 ```
@@ -24,7 +27,7 @@ let $WORKING_DIR = "C:/dev"
 Working dir is where NERDTree will be opened
 
 
-###Hotkeys
+### Hotkeys
 OBS: The leader key is **```\|```**
 
 | **Hotkey**         | **Action**               |
@@ -47,19 +50,19 @@ OBS: The leader key is **```\|```**
 
 ----------
 
-###Vundle - plugin manager
+### Vundle - plugin manager
 
-####How to install on Linux
+#### How to install on Linux
 ```
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-####On Windows
+#### On Windows
 ```
 git clone https://github.com/VundleVim/Vundle.vim.git ~/vimfiles/bundle/Vundle.vim
 ```
 
-####Installing all plugins
+#### Installing all plugins
 ```
 :PluginInstall
 ```
