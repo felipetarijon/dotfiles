@@ -1,7 +1,7 @@
 " ~/.vimrc
 " Maintainer: Felipe Tarijon de Almeida <felipest9@gmail.com>
 " Description: vim initialization file
-" Version: 20161005.0
+" Version: 20210309.0
 "
 " Help? Press K while the cursor is in the keyword
 "
@@ -80,9 +80,9 @@ set colorcolumn=150
 highlight ColorColumn ctermbg=white guibg=white
 hi ColorColumn guibg=white ctermbg=white
 
-set backupdir=$VIMHOME/backup//
-set directory=$VIMHOME/swap//
-set undodir=$VIMHOME/undo//
+set backupdir=$VIMHOME/backup/
+set directory=$VIMHOME/swap/
+set undodir=$VIMHOME/undo/
 
 " Size of the window at startup
 if has("gui_running")
@@ -204,7 +204,7 @@ if has("autocmd")
 endif
 
 nmap <F8> :TagbarToggle<CR>                 " F8 to Toggle TagBar
-nmap <F9> :e ~/$VIMFILE<CR>                   " F9 to open vimrc file
+nmap <F9> :e ~/$VIMFILE<CR>                 " F9 to open vimrc file
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
